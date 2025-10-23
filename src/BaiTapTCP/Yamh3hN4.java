@@ -1,6 +1,6 @@
 package BaiTapTCP;
 
-import BaiTapTCP.TCP.Product;
+import TCP.Product;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -23,7 +23,7 @@ public class Yamh3hN4 {
         oos.writeObject(studentCode+";"+qCode);
         oos.flush();
 
-//        BaiTapTCP.TCP.Product product = (BaiTapTCP.TCP.Product) ois.readObject();
+//        TCP.Product product = (TCP.Product) ois.readObject();
         Product product = (Product) ois.readObject();
 
         int intPrice = (int) product.getPrice();

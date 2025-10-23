@@ -1,6 +1,6 @@
 package BaiTapTCP;
 
-import BaiTapTCP.TCP.Address;
+import TCP.Address;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

@@ -1,4 +1,4 @@
-package BaiTapTCP.TCP;
+package TCP;
 
 import java.io.Serializable;
 
