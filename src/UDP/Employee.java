@@ -1,9 +1,9 @@
-package BaiTapUDP.UDP;
+package UDP;
 
 import java.io.Serializable;
 
 public class Employee implements Serializable {
-//    Tên đầy đủ lớp: BaiTapUDP.UDP.Employee
+//    Tên đầy đủ lớp: UDP.Employee
 //    Các thuộc tính: id (String), name (String), salary (double), hireDate (String)
 //    Hàm khởi tạo:
 //    public Employee(String id, String name, double salary, String hireDate)

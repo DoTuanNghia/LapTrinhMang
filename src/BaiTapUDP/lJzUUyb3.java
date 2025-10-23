@@ -8,11 +8,11 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.ArrayList;
 
-public class s77rQjex {
+public class lJzUUyb3 {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         String server = "203.162.10.109";
         int port = 2209;
-        String message = ";B22DCCN604;BaiTapUDP.s77rQjex";
+        String message = ";B22DCCN196;lJzUUyb3";
 
         InetAddress inetAddress = InetAddress.getByName(server);
         DatagramSocket socket = new DatagramSocket();
@@ -21,8 +21,8 @@ public class s77rQjex {
         DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, inetAddress, port);
         socket.send(sendPacket);
 
-        byte[] buffer =  new byte[1024];
-        DatagramPacket receivePacket = new DatagramPacket(buffer, buffer.length);
+        byte[] receive = new byte[1024];
+        DatagramPacket receivePacket = new DatagramPacket(receive, receive.length);
         socket.receive(receivePacket);
 
         byte[] receiveData = receivePacket.getData();
@@ -32,9 +32,9 @@ public class s77rQjex {
         ObjectInputStream ois = new ObjectInputStream(bais);
         Employee employee = (Employee) ois.readObject();
 
-        // xu ly
+        //xu ly
         employee.setName(name(employee.getName()));
-        employee.setSalary(employee.getSalary() + 1.0*employee.getSalary()*salary(employee.getHireDate())/100);
+        employee.setSalary(salary(employee.getSalary(), employee.getHireDate()));
         employee.setHireDate(hireDate(employee.getHireDate()));
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -46,32 +46,33 @@ public class s77rQjex {
         result.write(requestID.getBytes());
         result.write(baos.toByteArray());
 
-        byte[] sendResult = result.toByteArray();
-        DatagramPacket sendResultPacket = new DatagramPacket(sendResult, sendResult.length, inetAddress, port);
-        socket.send(sendResultPacket);
+        byte[] sendData2 = result.toByteArray();
+        DatagramPacket sendPacket2 = new DatagramPacket(sendData2, sendData2.length, inetAddress, port);
+        socket.send(sendPacket2);
     }
 
     public static String name(String s){
-        String[] temp =  s.split(" ");
+        String[] temp = s.split(" ");
         ArrayList<String> list = new ArrayList<>();
         for (String str : temp) {
-            list.add(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+            list.add(str.substring(0,1).toUpperCase() + str.substring(1).toLowerCase());
         }
         return String.join(" ", list);
     }
 
-    public static int salary(String s){
-        String[] temp =  s.split("-");
+    public static double salary(double n, String s){
+        String[] temp = s.split("-");
+        String year = temp[0];
         int sum = 0;
-        String num = temp[0];
-        for (int i = 0; i < num.length(); i++) {
-            sum += Integer.parseInt(String.valueOf(num.charAt(i)));
+        for (int i = 0; i < year.length(); i++) {
+            sum += Integer.parseInt(String.valueOf(year.charAt(i)));
         }
-        return sum;
+        return n + 1.0*n*sum/100;
     }
 
     public static String hireDate(String s){
-        String[] temp =  s.split("-");
+        String[] temp = s.split("-");
         return temp[2] + "/" + temp[1] + "/" + temp[0];
     }
+
 }

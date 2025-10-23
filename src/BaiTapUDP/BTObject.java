@@ -1,4 +1,4 @@
-package BaiTapUDP;//import BaiTapUDP.UDP.Student;
+package BaiTapUDP;//import UDP.Student;
 //
 //import java.io.*;
 //import java.net.DatagramPacket;
@@ -76,7 +76,7 @@ package BaiTapUDP;//import BaiTapUDP.UDP.Student;
 //    }
 //}
 
-import BaiTapUDP.UDP.Student;
+import UDP.Student;
 
 import java.io.*;
 import java.net.DatagramPacket;

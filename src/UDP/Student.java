@@ -1,4 +1,4 @@
-package BaiTapUDP.UDP;
+package UDP;
 
 import java.io.Serializable;
 

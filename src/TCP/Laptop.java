@@ -1,36 +1,27 @@
-package BaiTapUDP.UDP;
+package TCP;
 
 import java.io.Serializable;
 
-public class Product implements Serializable {
-    private static final long serialVersionUID = 20161107;
-    String id;
+public class Laptop implements Serializable {
+//    •	Các thuộc tính: id int, code String, name String, quantity int
+    private static final long serialVersionUID = 20150711L;
+    int id;
     String code;
     String name;
     int quantity;
 
-    public Product(String id, String code, String name, int quantity) {
+    public Laptop(int id, String code, String name, int quantity) {
         this.id = id;
         this.code = code;
         this.name = name;
         this.quantity = quantity;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id='" + id + '\'' +
-                ", code='" + code + '\'' +
-                ", name='" + name + '\'' +
-                ", quantity=" + quantity +
-                '}';
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

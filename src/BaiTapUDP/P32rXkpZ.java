@@ -1,6 +1,6 @@
 package BaiTapUDP;
 
-import BaiTapUDP.UDP.Product;
+import UDP.Product;
 
 import java.io.*;
 import java.net.DatagramPacket;

@@ -1,4 +1,4 @@
-package BaiTapUDP.UDP;
+package UDP;
 
 import java.io.Serializable;
 
@@ -69,7 +69,7 @@ public class Book implements Serializable {
         this.publishDate = publishDate;
     }
 
-    //    Tên đầy đủ lớp: BaiTapUDP.UDP.Book
+    //    Tên đầy đủ lớp: UDP.Book
 //    Các thuộc tính: id (String), title (String), author (String), isbn (String), publishDate (String)
 //    Hàm khởi tạo:
 //    public Book(String id, String title, String author, String isbn, String publishDate)
