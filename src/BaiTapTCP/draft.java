@@ -75,9 +75,13 @@ public class draft {
         oos.flush();
 
         Address address = (Address) ois.readObject();
+        //xu ly
 
         oos.writeObject(address);
         oos.flush();
         */
+        int n = 5;
+        String ans = Integer.toHexString(n);
+        System.out.println(ans);
     }
 }

@@ -22,6 +22,7 @@ public class BdpYQwGi {
         byte[] recceive = new byte[1024];
         DatagramPacket receivePacket = new DatagramPacket(recceive, recceive.length);
         socket.receive(receivePacket);
+        System.out.println(receivePacket.getData());
 
         String receiveString = new String(receivePacket.getData(), 0, receivePacket.getLength());
         String[] temp =  receiveString.split(";");
