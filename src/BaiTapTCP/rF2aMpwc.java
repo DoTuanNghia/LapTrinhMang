@@ -23,14 +23,18 @@ public class rF2aMpwc {
 
         byte[] buffer = new byte[1024];
         int len = is.read(buffer);
-//        String s = new String(buffer, 0, len);
-        String s = "5,10,20,25,50,40,30,35";
+        String s = new String(buffer, 0, len);
+//        String s = "5,10,20,25,50,40,30,35";
         String[] line = s.trim().split(",");
 
-        int n = line.length, a[] = new int[n];
+        int n = line.length;
+        int[] a = new int[n];
         for (int i = 0; i < n; i++) a[i] = Integer.parseInt(line[i]);
 
-        int f[] = new int[n], trace[] = new int[n], max = 0, id = 0;
+        int[] f = new int[n];
+        int[] trace = new int[n];
+        int max = 0;
+        int id = 0;
         for (int i = 0; i < n; i++) {
             f[i] = 1;
             trace[i] = -1;
@@ -43,9 +47,6 @@ public class rF2aMpwc {
                     trace[i] = j;
                 }
             }
-        }
-        for (int i = 0; i < n; i++) {
-            System.out.println(f[i] + " " + trace[i]);
         }
         for (int i = 0; i < n; i++) {
             if (f[i] > max) {
